@@ -1,0 +1,8 @@
+.idea
+.history
+.media
+.static
+.vscode
+mysite.log
+./*/__pycache__/*
+data
