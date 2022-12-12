@@ -18,6 +18,10 @@ class GetAndPost(APIView):
         serializer = PokemonSerializer(pokemons, many=True, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+class testPokemon(APIView):
+    def get(self, request: Request):
+        return HttpResponse('FUNCIONA ENDPOINT')
+
 
 class CreatePokemon(GenericAPIView):
     serializer_class = PokemonSerializer
