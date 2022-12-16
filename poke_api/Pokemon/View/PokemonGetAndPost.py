@@ -46,8 +46,9 @@ class CreatePokemon(GenericAPIView):
                     },
                     status=status.HTTP_201_CREATED
                 )
-            return Response({'error': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': serializer.errors}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
+            print(e)
             raise ParseError(f"an error ocurred with {e}")
         
 
